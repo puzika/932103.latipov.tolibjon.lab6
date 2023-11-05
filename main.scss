@@ -1,0 +1,92 @@
+:root {
+   --color-back-cat: #0000FF;
+   --color-back-dot: #008000;
+   --color-back-btn: #FF0000;
+   --color-white: #fff;
+   --color-black: #000;
+
+   --font-size-default: 1.6rem;
+}
+
+*,
+*::before,
+*::after {
+   margin: 0;
+   padding: 0;
+   box-sizing: inherit;
+}
+
+html {
+   font-size: 62.5%;
+   box-sizing: border-box;
+}
+
+body {
+   font-size: var(--font-size-default);
+   font-family: Arial, Helvetica, sans-serif;
+   color: var(--color-white);
+}
+
+.container {
+   margin: 0 auto;
+   max-width: 50%;
+}
+
+.btns {
+   display: flex;
+   
+   &__btn {
+      flex: 1;
+      background-color: var(--color-back-btn);
+      font-size: 2rem;
+      color: inherit;
+      padding: 1rem 0;
+      border: .1rem solid var(--color-black);
+      transition: background-color .2s;
+      cursor: pointer;
+
+      &:hover {
+         background-color: darken(#FF0000, 10%);
+      }
+   }
+}
+
+.boxes {
+   display: flex;
+
+   &__box {
+      flex: 1;
+      padding: 1.5rem 1.5rem 10rem; 
+      transition: flex .8s;
+
+      &--cat {
+         background-color: var(--color-back-cat);
+      }
+
+      &--dog {
+         background-color: var(--color-back-dot);
+      }
+
+      &--active {
+         flex: .95;
+      }
+
+      &--hidden {
+         flex: .05;
+      }
+   }
+
+   &__image {
+      width: 100%;
+      height: 30rem;
+      transition: all .8s;
+
+      &--active {
+         width: 80%;
+      }
+
+      &--hidden {
+         transform: scaleX(0);
+      }
+   }
+}
